@@ -7,13 +7,10 @@ class PostImage < ApplicationRecord
     has_many :post_comments, dependent: :destroy
     has_many :favorites, dependent: :destroy
     
-    # def get_image
-    #     if image.attached?
-    #         image
-    #     else
-    #         'no_image.jpg'
-    #     end
-    # end
+    validates :shop_name, presence: true
+    validates :image, presence: true
+    
+
     
     def get_image
         unless image.attached?
