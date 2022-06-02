@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   resources :post_images, only: [:new, :create, :index, :show, :destroy] do
     
-    resources :post_comments, only: [:create]
+    resources :post_comments, only: [:create, :destroy]
     
   end
   
